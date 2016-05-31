@@ -23,9 +23,6 @@ public class Throw : MonoBehaviour {
 		movement.Normalize ();
 		rb2d.velocity = movement*speed;
 		this.transform.Rotate(new Vector3(0, 0, 360.0f - Vector3.Angle(this.transform.right, movement.normalized)));
-
-
-		//rb2d.transform.LookAt (mousePos);
 	}
 
 	// Update is called once per frame
