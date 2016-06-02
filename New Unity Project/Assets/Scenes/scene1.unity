@@ -457,6 +457,8 @@ MonoBehaviour:
   speed: 3
   spear: {fileID: 185318, guid: 068a4b75a926c634d9cbcf3fe5d19ed2, type: 2}
   fireRate: 0.5
+  regenRate: 0.5
+  hpBar: {fileID: 0}
 --- !u!50 &1620442247
 Rigidbody2D:
   serializedVersion: 2
@@ -511,7 +513,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620442245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.47, y: -9.16, z: 0}
+  m_LocalPosition: {x: -12.55, y: -9.16, z: 0}
   m_LocalScale: {x: 3.1036136, y: 3.1036115, z: 3.1036115}
   m_Children: []
   m_Father: {fileID: 0}
