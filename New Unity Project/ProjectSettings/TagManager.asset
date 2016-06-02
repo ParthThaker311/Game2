@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Throw
-  - EnemyThrow
+  - friendlyAttackRanged
+  - enemyAttackRanged
   layers:
   - Default
   - TransparentFX

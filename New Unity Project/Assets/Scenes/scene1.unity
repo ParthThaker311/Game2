@@ -196,6 +196,7 @@ GameObject:
   - 50: {fileID: 82090873}
   - 60: {fileID: 82090872}
   - 114: {fileID: 82090871}
+  - 114: {fileID: 82090876}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -424,6 +425,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &82090876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82090870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dbfd6ae5bd7cd4d96e13b3c82aceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  regenRate: 0.5
+  hpBarFull: {fileID: 2800000, guid: 2a822057575fe3748ba0f010b208990e, type: 3}
+  hpBarEmpty: {fileID: 2800000, guid: cb0fe883206f16240a9ecb98b035f93c, type: 3}
+  regenDelay: 0
+  attackTag: friendlyAttackRanged
 --- !u!1 &1620442245
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +454,7 @@ GameObject:
   - 50: {fileID: 1620442247}
   - 114: {fileID: 1620442246}
   - 60: {fileID: 1620442250}
+  - 114: {fileID: 1620442251}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -457,8 +476,6 @@ MonoBehaviour:
   speed: 3
   spear: {fileID: 185318, guid: 068a4b75a926c634d9cbcf3fe5d19ed2, type: 2}
   fireRate: 0.5
-  regenRate: 0.5
-  hpBar: {fileID: 0}
 --- !u!50 &1620442247
 Rigidbody2D:
   serializedVersion: 2
@@ -685,6 +702,23 @@ PolygonCollider2D:
       - {x: -0.37, y: 0.26999998}
       - {x: -0.39999998, y: 0.26999998}
       - {x: -0.47, y: 0.26}
+--- !u!114 &1620442251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620442245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dbfd6ae5bd7cd4d96e13b3c82aceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  regenRate: 0.5
+  hpBarFull: {fileID: 2800000, guid: 2a822057575fe3748ba0f010b208990e, type: 3}
+  hpBarEmpty: {fileID: 2800000, guid: cb0fe883206f16240a9ecb98b035f93c, type: 3}
+  regenDelay: 5
+  attackTag: enemyAttackRanged
 --- !u!1 &2067572287
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +794,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: 14.998024, y: -10.256242}
+  - {x: -10.605155, y: -10.178914}
   - {x: -14.861303, y: -10.210477}
   - {x: -15.022763, y: 2.9822733}
   - {x: 14.97004, y: 2.8892467}
