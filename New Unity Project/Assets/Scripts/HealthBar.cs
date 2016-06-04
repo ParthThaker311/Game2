@@ -23,6 +23,9 @@ public class HealthBar : MonoBehaviour {
 			currentHealth++;
 		}
 		if (currentHealth <= 0) {
+			if (this.tag == "Player") {
+				GameObject.FindGameObjectWithTag ("npc").tag = "Player";
+			}
 			Destroy (gameObject);
 		}
 	}

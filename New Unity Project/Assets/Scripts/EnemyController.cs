@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyController : MonoBehaviour {
 
 	private float health = 99;
-	public GameObject player;
+	private GameObject player;
 	private float playerDistance;
 	private float nextThrow;
 	public float fireRate;
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		player = GameObject.FindGameObjectWithTag ("Player");
 		currentX = this.transform.position.x;
 		if (currentX <= initialX - 1) {
 			direction = 1;
@@ -29,10 +30,12 @@ public class EnemyController : MonoBehaviour {
 			direction = -1;
 		}
 		rb2d.velocity = new Vector3 (1, 0, 0)*direction;
-		playerDistance = Mathf.Sqrt (Mathf.Pow ((player.transform.position.x - this.transform.position.x), 2) + Mathf.Pow ((player.transform.position.y - this.transform.position.y), 2));
-		if(playerDistance <= 10 && Time.time > nextThrow){
+		if (player != null) {
+			playerDistance = Mathf.Sqrt (Mathf.Pow ((player.transform.position.x - this.transform.position.x), 2) + Mathf.Pow ((player.transform.position.y - this.transform.position.y), 2));
+			if (playerDistance <= 10 && Time.time > nextThrow) {
 				nextThrow = Time.time + fireRate;
 				Instantiate (spear, this.transform.position, spear.transform.rotation);
+			}
 		}
 		if (health <= 0) {
 			Destroy (gameObject);

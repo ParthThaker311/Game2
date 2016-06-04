@@ -9,7 +9,7 @@ public class EnemyThrow : MonoBehaviour {
 	private bool moveRight = true;
 	// Use this for initialization
 	void Start () {
-		target = GameObject.Find ("Player");
+		target = GameObject.FindGameObjectWithTag("Player");
 		rb2d = GetComponent<Rigidbody2D> ();
 		if (target.transform.position.x < rb2d.position.x) {
 			transform.Rotate (Vector3.forward * -90);

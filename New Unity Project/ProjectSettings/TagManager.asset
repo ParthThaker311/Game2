@@ -6,6 +6,8 @@ TagManager:
   tags:
   - friendlyAttackRanged
   - enemyAttackRanged
+  - npc
+  - Hero
   layers:
   - Default
   - TransparentFX
