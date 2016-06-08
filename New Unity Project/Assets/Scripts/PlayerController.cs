@@ -19,13 +19,14 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButton ("Fire1") && Time.time > nextThrow) {
-			nextThrow = Time.time + fireRate;
-			Instantiate (spear, rb2d.transform.position, spear.transform.rotation);
-		} 
 		if (this.tag == "Player") {
+			if (Input.GetButton ("Fire1") && Time.time > nextThrow) {
+				nextThrow = Time.time + fireRate;
+				Instantiate (spear, rb2d.transform.position, spear.transform.rotation);
+			} 
 			Vector2 movement = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
 			rb2d.velocity = movement * speed;
+			Debug.Log (this.transform.position.y);
 		} else {
 			currentX = this.transform.position.x;
 			if (currentX <= initialX - 1) {

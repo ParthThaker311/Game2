@@ -8,6 +8,7 @@ TagManager:
   - enemyAttackRanged
   - npc
   - Hero
+  - waypoint
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - Controllable
   - 
   - 
   - 
