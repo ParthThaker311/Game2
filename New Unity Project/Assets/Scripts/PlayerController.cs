@@ -11,10 +11,15 @@ public class PlayerController : MonoBehaviour {
 	private float direction = 1;
 	private float initialX;
 	private float currentX;
+	private Vector2 movement;
+	public float jumpTime;
+	private float origJumpTime;
+	public float jumpSpeed;
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		initialX = this.transform.position.x;
 		currentX = initialX;
+		origJumpTime = jumpTime;
 	}
 	
 	// Update is called once per frame
@@ -24,8 +29,17 @@ public class PlayerController : MonoBehaviour {
 				nextThrow = Time.time + fireRate;
 				Instantiate (spear, rb2d.transform.position, spear.transform.rotation);
 			} 
-			Vector2 movement = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
-			rb2d.velocity = movement * speed;
+			if (Input.GetButton ("Jump") && jumpTime > 0) {
+				nextThrow = Time.time + fireRate;
+
+				movement = new Vector2 (Input.GetAxis ("Horizontal"), jumpSpeed);
+				rb2d.velocity =(movement);
+				jumpTime--;
+			} else {
+				movement = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
+				rb2d.velocity = movement * speed;
+			}
+
 			Debug.Log (this.transform.position.y);
 		} else {
 			currentX = this.transform.position.x;
@@ -35,6 +49,11 @@ public class PlayerController : MonoBehaviour {
 				direction = -1;
 			}
 			rb2d.velocity = new Vector3 (1, 0, 0)*direction;
+		}
+	}
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.tag == "ground") {
+			jumpTime = origJumpTime;
 		}
 	}
 }

@@ -663,6 +663,8 @@ MonoBehaviour:
   speed: 3
   spear: {fileID: 185318, guid: 068a4b75a926c634d9cbcf3fe5d19ed2, type: 2}
   fireRate: 0.5
+  jumpTime: 50
+  jumpSpeed: 7
 --- !u!50 &306021837
 Rigidbody2D:
   serializedVersion: 2
@@ -675,7 +677,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 10
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -945,6 +947,8 @@ MonoBehaviour:
   speed: 3
   spear: {fileID: 185318, guid: 068a4b75a926c634d9cbcf3fe5d19ed2, type: 2}
   fireRate: 0.5
+  jumpTime: 0
+  jumpSpeed: 0
 --- !u!50 &464778196
 Rigidbody2D:
   serializedVersion: 2
@@ -1327,6 +1331,8 @@ MonoBehaviour:
   speed: 3
   spear: {fileID: 185318, guid: 068a4b75a926c634d9cbcf3fe5d19ed2, type: 2}
   fireRate: 0.5
+  jumpTime: 0
+  jumpSpeed: 0
 --- !u!50 &596309195
 Rigidbody2D:
   serializedVersion: 2
@@ -1638,9 +1644,10 @@ GameObject:
   - 61: {fileID: 2067572296}
   - 61: {fileID: 2067572295}
   - 61: {fileID: 2067572294}
+  - 68: {fileID: 2067572297}
   m_Layer: 0
   m_Name: Level
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1812,6 +1819,21 @@ BoxCollider2D:
   m_Offset: {x: 7.6371517, y: -6.1636744}
   serializedVersion: 2
   m_Size: {x: 3.8510404, y: 1.09659}
+--- !u!68 &2067572297
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067572287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -6.4089212, y: -9.328817}
+  - {x: 14.98409, y: -9.286005}
 --- !u!1001 &2134941998
 Prefab:
   m_ObjectHideFlags: 0
@@ -1862,6 +1884,26 @@ Prefab:
     - target: {fileID: 173314, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081048, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081048, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}
+      propertyPath: m_GravityScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449826, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}
+      propertyPath: jumpTime
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027534, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449826, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}
+      propertyPath: jumpSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 974a051e307687d4bb7ee10589d39f83, type: 2}

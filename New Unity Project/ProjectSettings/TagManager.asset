@@ -9,6 +9,7 @@ TagManager:
   - npc
   - Hero
   - waypoint
+  - ground
   layers:
   - Default
   - TransparentFX
